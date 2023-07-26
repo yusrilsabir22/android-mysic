@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.components.SongCard"
+    android:layout_marginVertical="5dp">
+
+    <ImageView
+        android:id="@+id/song_image"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="@string/title_song_image"
+        android:src="@drawable/ic_music_foreground"
+        app:layout_constraintEnd_toStartOf="@+id/wrap_song_info"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/wrap_song_info"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/default_dims"
+        app:layout_constraintBottom_toBottomOf="@+id/song_image"
+        app:layout_constraintStart_toEndOf="@+id/song_image"
+
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry">
+
+        <TextView
+            android:id="@+id/song_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/default_dims"
+            android:text="@string/title_blank" />
+
+        <TextView
+            android:id="@+id/song_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/subtitle_blank" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/song_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/default_duration"
+        app:layout_constraintBottom_toBottomOf="@+id/song_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/song_image"
+        android:layout_marginHorizontal="@dimen/default_dims"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
